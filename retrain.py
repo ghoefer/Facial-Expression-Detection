@@ -107,6 +107,7 @@ import tarfile
 import numpy as np
 from six.moves import urllib
 import tensorflow as tf
+# import tensorflow.compat.v1 as tf #sometimes this might fix bug
 
 from tensorflow.python.framework import graph_util
 from tensorflow.python.framework import tensor_shape
@@ -968,7 +969,8 @@ def main(_):
   # Needed to make sure the logging output is visible.
   # See https://github.com/tensorflow/tensorflow/issues/3047
   tf.logging.set_verbosity(tf.logging.INFO)
-
+  # from IPython import embed
+  # embed()
   # Prepare necessary directories  that can be used during training
   prepare_file_system()
 

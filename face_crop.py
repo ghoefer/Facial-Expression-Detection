@@ -11,13 +11,13 @@ import os
 ##Make changes to these lines for getting the desired results.
 
 ## DIRECTORY of the images
-directory = "E:/data/vids/a"
+directory = "images/Happy/"
 
 ## directory where the images to be saved:
-f_directory = "E:/data/vids/Yawning/"
+f_directory = "images/save/Happy/"
 
 ################################################################################
-            
+
 def facecrop(image):
     ## Crops the face of a person from any image!
 
@@ -31,8 +31,12 @@ def facecrop(image):
     try:
         ## Some downloaded images are of unsupported type and should be ignored while raising Exception, so for that
         ## I'm using the try/except functions.
-    
+        print('going')
+        # from IPython import embed
+        # embed()
+        # exit()
         minisize = (img.shape[1],img.shape[0])
+
         miniframe = cv2.resize(img, minisize)
 
         faces = cascade.detectMultiScale(miniframe)
@@ -48,15 +52,17 @@ def facecrop(image):
 
             ## Change here the Desired directory.
             cv2.imwrite(f_directory + f_name, sub_face)
+
             print ("Writing: " + image)
 
     except:
-        pass
+        print('error')
 
 if __name__ == '__main__':
     images = os.listdir(directory)
     i = 0
-    
+    print(images)
+
     for img in images:
         file = directory + img
         print (i)
