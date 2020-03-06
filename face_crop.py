@@ -11,10 +11,10 @@ import os
 ##Make changes to these lines for getting the desired results.
 
 ## DIRECTORY of the images
-directory = "images/Happy/"
+directory = "images/Yawning/"
 
 ## directory where the images to be saved:
-f_directory = "images/save/Happy/"
+f_directory = "images/Yawning/"
 
 ################################################################################
 
